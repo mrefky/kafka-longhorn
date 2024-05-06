@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: longhorn
+    meta.helm.sh/release-namespace: longhorn-system
+  creationTimestamp: "2024-05-06T08:14:16Z"
+  labels:
+    app: longhorn-ui
+    app.kubernetes.io/instance: longhorn
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: longhorn
+    app.kubernetes.io/version: v1.6.1
+    helm.sh/chart: longhorn-1.6.1
+  name: longhorn-frontend
+  namespace: longhorn-system
+  resourceVersion: "94931"
+  uid: 5982b724-024d-4c88-843e-05a4654e6d9a
+spec:
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 10.152.183.162
+  clusterIPs:
+  - 10.152.183.162
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http
+    nodePort: 31446
+    port: 80
+    protocol: TCP
+    targetPort: http
+  selector:
+    app: longhorn-ui
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 192.168.169.50
