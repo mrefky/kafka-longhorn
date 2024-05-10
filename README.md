@@ -2,4 +2,4 @@
 # Installation
 # UI
 
-![UI](./ln.jpg?raw=true "UI")
+![UI](./lh.jpg?raw=true "UI")
