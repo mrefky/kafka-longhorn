@@ -9,3 +9,6 @@ sudo microk8s.enable helm3
 sudo microk8s.enable registry 
 sudo microk8s.enable metallb 192.168.169.50-192.168.169.99 
 sudo iptables -P FORWARD ACCEPT
+microk8s.kubectl deflete -f db.yaml
+microk8s.kubectl create -f db.yaml
+./longhorn.sh
