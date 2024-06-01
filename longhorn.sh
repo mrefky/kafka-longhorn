@@ -1,7 +1,7 @@
 sudo apt-get install open-iscsi
 microk8s kubectl create -f https://raw.githubusercontent.com/longhorn/longhorn/v1.6.1/uninstall/uninstall.yaml
 microk8s kubectl get job/longhorn-uninstall -n longhorn-system 
-
+sudo mount --make-shared /
 microk8s  kubectl delete -f https://raw.githubusercontent.com/longhorn/longhorn/v1.6.1/deploy/longhorn.yaml
 microk8s kubectl delete -f https://raw.githubusercontent.com/longhorn/longhorn/v1.6.1/uninstall/uninstall.yaml
 
